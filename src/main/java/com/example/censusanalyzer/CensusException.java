@@ -17,5 +17,6 @@ public class CensusException extends Exception {
         super(message);
         this.type = type;
     }
+    
 }
 
