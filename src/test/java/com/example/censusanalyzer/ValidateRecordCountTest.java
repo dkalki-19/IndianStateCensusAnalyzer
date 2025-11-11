@@ -25,5 +25,12 @@ public class ValidateRecordCountTest {
 	            () -> analyser.loadStateCode("./StateCode.txt"));
 	}
 	
+	@Test
+	public void givenCSVWithWrongDelimiter_ShouldThrowException() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class,
+	            () -> analyser.loadStateCode("./WrongDelimiterStateCode.csv"));
+	}
+
 }
 
