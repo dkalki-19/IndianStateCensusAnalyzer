@@ -18,5 +18,13 @@ public class StateCensusAnalyzerTest {
 	    assertThrows(CensusException.class, 
 	        () -> analyser.loadStateCensus("./wrong-file.csv"));
 	}
+	
+	@Test
+	public void givenIncorrectFileType_ShouldThrow_InvalidTypeException() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class, 
+	        () -> analyser.loadStateCensus("./StateCensus.txt"));
+	}
+
 
 }
