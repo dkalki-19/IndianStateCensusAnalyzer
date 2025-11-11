@@ -11,4 +11,11 @@ public class ValidateRecordCountTest {
         assertEquals(37, count); // Use your actual number from CSV
     }
 	
+	@Test
+	public void givenIncorrectStateCodeFile_ShouldThrowException() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class,
+	            () -> analyser.loadStateCode("./wrong-file.csv"));
+	}
+
 }
