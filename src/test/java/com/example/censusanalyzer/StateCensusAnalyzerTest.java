@@ -11,4 +11,12 @@ public class StateCensusAnalyzerTest {
 	    assertEquals(29, count);  // Use your actual CSV count
 	}
 
+	
+	@Test
+	public void givenIncorrectFile_ShouldThrow_FileNotFoundException() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class, 
+	        () -> analyser.loadStateCensus("./wrong-file.csv"));
+	}
+
 }
