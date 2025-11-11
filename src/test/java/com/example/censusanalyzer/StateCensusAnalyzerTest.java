@@ -33,4 +33,11 @@ public class StateCensusAnalyzerTest {
 	        () -> analyser.loadStateCensus("./DelimiterWrong.csv"));
 	}
 
+	@Test
+	public void givenCSVWithIncorrectHeader_ShouldThrow_Exception() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class,
+	        () -> analyser.loadStateCensus("./WrongHeader.csv"));
+	}
+
 }
