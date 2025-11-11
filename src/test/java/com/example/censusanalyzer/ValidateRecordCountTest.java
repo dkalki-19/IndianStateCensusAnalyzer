@@ -24,7 +24,6 @@ public class ValidateRecordCountTest {
 	    assertThrows(CensusException.class,
 	            () -> analyser.loadStateCode("./StateCode.txt"));
 	}
-
-
+	
 }
 
