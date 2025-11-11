@@ -17,5 +17,14 @@ public class ValidateRecordCountTest {
 	    assertThrows(CensusException.class,
 	            () -> analyser.loadStateCode("./wrong-file.csv"));
 	}
+	
+	@Test
+	public void givenWrongFileType_ShouldThrowInvalidTypeException() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class,
+	            () -> analyser.loadStateCode("./StateCode.txt"));
+	}
+
 
 }
+
