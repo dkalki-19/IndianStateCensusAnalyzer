@@ -26,5 +26,11 @@ public class StateCensusAnalyzerTest {
 	        () -> analyser.loadStateCensus("./StateCensus.txt"));
 	}
 
+	@Test
+	public void givenCSVWithIncorrectDelimiter_ShouldThrow_Exception() {
+	    StateCensusAnalyser analyser = new StateCensusAnalyser();
+	    assertThrows(CensusException.class,
+	        () -> analyser.loadStateCensus("./DelimiterWrong.csv"));
+	}
 
 }
